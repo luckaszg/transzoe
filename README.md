@@ -13,7 +13,7 @@ site/                     published folder
   index.html              Spanish (default)
   pt/index.html           Portuguese (BR)
   assets/css/styles.css   shared stylesheet
-  assets/img/logo.jpg, trucks.jpg
+  assets/img/logo.jpg, truck.jpg
   assets/img/flags/       language switcher flags (py.svg, br.svg)
   assets/js/contact.js    sends the contact form in the background, shows the result inline
 wrangler.toml             Cloudflare Pages config (publishes site/)
@@ -51,8 +51,6 @@ Without Git: `npx wrangler pages deploy` (reads `wrangler.toml`).
 Search for `TODO` in `site/` — currently:
 
 - Web3Forms access key.
-- Descriptions for the "Representaciones" and "Seguridad" services.
-- A high-resolution original of `trucks.jpg` (the Instagram copy is 640×452).
 
 ## Contact form email setup
 

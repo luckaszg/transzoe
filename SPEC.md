@@ -34,18 +34,30 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 ### Idiomas
 - Una página por idioma: `/` (español, por defecto) y `/pt/` (portugués BR).
-- Selector de idioma con banderas (SVG propias en `site/assets/img/flags/`, no emojis): Paraguay = español, Brasil = portugués. Solo banderas; el idioma actual en opacidad completa y subrayado plateado, el otro atenuado. El nombre del idioma va en `title` y `alt`.
+- Selector de idioma con banderas (SVG propias en `site/assets/img/flags/`, no emojis): Paraguay = español, Brasil = portugués. Cada botón muestra bandera + nombre del idioma ("Español", "Português"); el idioma actual en opacidad completa y subrayado plateado, el otro atenuado. La bandera tiene `alt=""` porque el nombre ya está como texto.
 
 ### Estilo
+- Texto del logo en el encabezado: "Logística Transzoe S.R.L." (con puntos, igual que la razón social del pie).
 - Propuesta "A": azul marino `#0B1A7A` / `#071052`, tipografías Barlow + Barlow Condensed, títulos en mayúsculas, franja tipo ruta discontinua.
 - Sin amarillo/ámbar (rechazado por el cliente). Acento plateado `#C9CED9` con texto azul marino en botones; etiquetas de sección en `#556080`.
 
 ### Hero
-- Foto `site/assets/img/trucks.jpg`: tres camiones Scania con la marca Transzoe, del post de Instagram del 2 de julio de 2025 (https://www.instagram.com/p/DLm_WfmgbwF/). Tiene el logo arriba y un texto en español abajo; se recorta con CSS (proporción 2:1) para mostrar solo los camiones, así la página PT no muestra texto en español.
-- Se descartó `truck.jpg` (foto nocturna cuadrada): al recortar el eslogan quedaban cortadas las ruedas.
-- La copia de Instagram es de baja resolución (640×452). Conviene pedirle al cliente el archivo original.
+- Foto `site/assets/img/truck.jpg`: tres camiones Scania con la marca Transzoe al atardecer, sin texto encima. Se generó desde `truck.PNG` (2048×1152, 5,4 MB) como JPG de 1600×900 (~445 KB); se muestra completa en 16:9, sin recorte. Reemplaza a la foto de Instagram anterior (`trucks.jpg`).
+- Texto: "Logística nacional e internacional de cargas, desde Limpio, Paraguay." (sin "por camión").
+
+### Antigüedad
+- No mostrar el año de fundación: se usa "16 años de experiencia transportando y conectando países" (etiqueta del hero, texto y dato de "Nosotros"). El número está escrito a mano: actualizarlo cada año.
+
+### Servicios (textos del cliente)
+- Transporte nacional: "Transportamos tu carga dentro de Paraguay con flota propia y seguimiento GPS. Coordinamos cada traslado según el tipo de mercadería, origen y destino."
+- Transporte internacional: "Conectamos Paraguay con Argentina, Chile, Bolivia y Uruguay. Transportamos carga seca, granos y mercadería paletizada, con consolidados semanales desde Argentina."
+- Representaciones: "Actuamos como agente de carga y acompañamos la gestión de permisos y documentación necesarios para operaciones de importación y exportación, coordinando cada trámite según el tipo de mercadería y los requisitos aplicables."
+- Seguridad: "Monitoreamos nuestras unidades mediante GPS en tiempo real para mantener el control del recorrido. Contamos con permisos y habilitaciones para el transporte de mercaderías peligrosas, según los requisitos de cada operación."
 
 ### Formulario
+- Es un pedido de cotización. Título de la sección: "Contanos qué necesitás transportar y te preparamos una cotización." (completo, pedido del cliente).
+- Campos: Nombre, Empresa, WhatsApp, Origen, Destino (separados), Tipo de carga (texto libre), Peso o volumen aproximado, Fecha estimada (selector de fecha). Sin email: el cliente no lo pidió; se responde por WhatsApp.
+- Los atributos `name` de los campos están en español en ambas páginas, para que todos los emails lleguen con las mismas etiquetas.
 - Sin autocompletado del navegador: `autocomplete="off"` en el formulario y en cada campo.
 
 ## Datos de la empresa
@@ -59,5 +71,3 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 ## Pendiente
 
 - Access key de Web3Forms (reemplazar `[WEB3FORMS_ACCESS_KEY]` en ambas páginas).
-- Original en alta resolución de `trucks.jpg`.
-- Descripciones de los servicios "Representaciones" y "Seguridad".
