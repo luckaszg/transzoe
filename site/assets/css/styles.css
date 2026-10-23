@@ -87,10 +87,12 @@ a:hover { color: var(--navy-dark); }
 .site-nav a { color: #FFFFFF; text-decoration: none; }
 .site-nav a:hover { color: var(--accent); }
 
-.lang-switch { display: flex; align-items: center; gap: 10px; }
+.lang-switch { display: flex; align-items: center; gap: 16px; }
 
 .lang-switch a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   opacity: 0.5;
@@ -149,13 +151,11 @@ a:hover { color: var(--navy-dark); }
   overflow: hidden;
 }
 
-/* trucks.jpg has a logo at the top and a Spanish caption at the bottom: crop to the trucks only */
 .hero-media img {
   display: block;
   width: 100%;
-  aspect-ratio: 2 / 1;
-  object-fit: cover;
-  object-position: 50% 55%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .road-stripe {
@@ -293,8 +293,7 @@ a:hover { color: var(--navy-dark); }
   font-weight: 500;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact-form input {
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -302,13 +301,10 @@ a:hover { color: var(--navy-dark); }
   color: var(--text);
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form input:focus {
   outline: 2px solid var(--navy);
   outline-offset: 1px;
 }
-
-.contact-form textarea { resize: vertical; }
 
 .contact-form button:disabled { opacity: 0.6; cursor: wait; }
 
