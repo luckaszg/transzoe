@@ -114,11 +114,40 @@
           <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" aria-hidden="true">
           <label>Nome<input type="text" name="name" autocomplete="off" required></label>
           <label>Empresa<input type="text" name="Empresa" autocomplete="off"></label>
-          <label>WhatsApp<input type="tel" name="WhatsApp" autocomplete="off" required></label>
+          <div class="field">
+            <label for="whatsapp">WhatsApp</label>
+            <div class="phone-field">
+              <select aria-label="Código do país">
+              <option value="+595" data-digits="9">+595 Paraguai</option>
+              <option value="+54" data-digits="10-11">+54 Argentina</option>
+              <option value="+55" data-digits="10-11" selected>+55 Brasil</option>
+              <option value="+56" data-digits="9">+56 Chile</option>
+              <option value="+591" data-digits="8">+591 Bolívia</option>
+              <option value="+598" data-digits="8">+598 Uruguai</option>
+              <option value="" data-digits="6-15">Outro (incluir o código do país)</option>
+              </select>
+              <input id="whatsapp" type="tel" name="WhatsApp" autocomplete="off" required data-invalid="Informe um número válido para o país escolhido.">
+            </div>
+          </div>
           <label>Origem<input type="text" name="Origen" autocomplete="off" required></label>
           <label>Destino<input type="text" name="Destino" autocomplete="off" required></label>
           <label>Tipo de carga<input type="text" name="Tipo de carga" autocomplete="off"></label>
-          <label>Peso ou volume aproximado<input type="text" name="Peso o volumen" autocomplete="off"></label>
+          <div class="field-row">
+            <div class="field">
+              <label for="peso">Peso aproximado</label>
+              <div class="unit-field">
+                <input id="peso" type="number" name="Peso (kg)" min="1" step="1" inputmode="numeric" autocomplete="off">
+                <span>kg</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="volumen">Volume aproximado</label>
+              <div class="unit-field">
+                <input id="volumen" type="number" name="Volumen (m³)" min="0.01" step="0.01" inputmode="decimal" autocomplete="off">
+                <span>m³</span>
+              </div>
+            </div>
+          </div>
           <label>Data estimada<input type="date" name="Fecha estimada" autocomplete="off"></label>
           <button class="btn btn-primary" type="submit">Solicitar orçamento</button>
           <p class="form-status" role="status" hidden></p>
