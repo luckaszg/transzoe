@@ -56,7 +56,8 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 ### Formulario
 - Es un pedido de cotización. Título de la sección: "Contanos qué necesitás transportar y te preparamos una cotización." (completo, pedido del cliente).
-- Campos: Nombre, Empresa, WhatsApp, Origen, Destino (separados), Tipo de carga (texto libre), Peso o volumen aproximado, Fecha estimada (selector de fecha). Sin email: el cliente no lo pidió; se responde por WhatsApp.
+- Campos: Nombre, Empresa, WhatsApp, Origen, Destino (separados), Tipo de carga (texto libre), Peso aproximado y Volumen aproximado (dos columnas en una sola línea, también en celular: kg a la izquierda, enteros; m³ a la derecha, hasta 2 decimales; ambos opcionales), Fecha estimada (selector de fecha). Sin email: el cliente no lo pidió; se responde por WhatsApp.
+- WhatsApp: selector de código de país (texto, sin banderas) + número. Países: Paraguay, Argentina, Brasil, Chile, Bolivia, Uruguay y "Otro (incluir el código del país)", donde el visitante escribe el código. Por defecto Paraguay en ES y Brasil en PT. `contact.js` valida la cantidad de dígitos según `data-digits` de cada opción (ignora separadores y el 0 inicial) y envía el número completo, ej. `+595 981123456`.
 - Los atributos `name` de los campos están en español en ambas páginas, para que todos los emails lleguen con las mismas etiquetas.
 - Sin autocompletado del navegador: `autocomplete="off"` en el formulario y en cada campo.
 
