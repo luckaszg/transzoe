@@ -1,0 +1,4 @@
+# Cloudflare Pages config: publishes the static site in site/ (no build step).
+name = "transzoe"
+pages_build_output_dir = "site"
+compatibility_date = "2026-10-01"
