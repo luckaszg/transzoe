@@ -29,7 +29,7 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 ### Stack
 - HTML + CSS estático, sin build. Deploy en Cloudflare Pages (`wrangler.toml` publica `site/`). Antes era Netlify; el cliente aprobó el cambio a Cloudflare.
-- Formulario de contacto con Web3Forms (`https://api.web3forms.com/submit`), que reenvía cada mensaje a contabilidad@logisticatranszoe.com.py. La access key de Web3Forms va en el campo oculto `access_key` de ambas páginas.
+- Formulario de contacto con Web3Forms (`https://api.web3forms.com/submit`), que reenvía cada mensaje a transporte@logisticatranszoe.com.py. La access key de Web3Forms va en el campo oculto `access_key` de ambas páginas.
 - El formulario se envía en segundo plano (`site/assets/js/contact.js`) y un mensaje de confirmación reemplaza al formulario en la misma página (ES/PT). Si falla, se muestra un error y se puede reintentar. Anti-spam: campo oculto `botcheck`.
 
 ### Idiomas
@@ -52,7 +52,7 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 - Razón social: Logística Transzoe S.R.L. — desde 2010.
 - WhatsApp: +595 983 901 170 (`https://wa.me/595983901170`).
-- Email: contabilidad@logisticatranszoe.com.py
+- Email: transporte@logisticatranszoe.com.py
 - Dirección: 4ta Proyectada casi Parapiti, Limpio, Departamento Central, Paraguay.
 - Google Maps: https://maps.app.goo.gl/CZcwULDbbG7fk2L8A — ficha "Logística i TransZoe", coordenadas `-25.1617711, -57.4717932` (el mapa embebido usa estas coordenadas).
 
