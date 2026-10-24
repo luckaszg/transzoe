@@ -12,3 +12,5 @@
 - Hosting is Cloudflare Pages and the form goes through Web3Forms; nothing Netlify-specific (`data-netlify`, `netlify.toml`) should come back.
 - Form texts for the inline status live in the form's `data-sending` / `data-success` / `data-error` attributes, one set per language page; `contact.js` is shared.
 - No headless browser is installed; visual checks are done by the user with `./start.sh`.
+- The preview server (`python3 -m http.server`) doesn't send no-cache headers, so browsers may show stale CSS/HTML. If the user doesn't see a change, first check that the server returns the new file (`curl`), then ask for a hard reload (Ctrl+Shift+R) or DevTools "Disable cache".
+- Every layout change must work on phones. Breakpoints live at the end of `styles.css` (header ≤ 860px, small screens ≤ 640px, phones ≤ 480px). Flex items with a large `flex-basis` need `min-width: 0`, or they push the page wider than the screen.

@@ -40,6 +40,7 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 - Texto del logo en el encabezado: "Logística Transzoe S.R.L." (con puntos, igual que la razón social del pie).
 - Propuesta "A": azul marino `#0B1A7A` / `#071052`, tipografías Barlow + Barlow Condensed, títulos en mayúsculas, franja tipo ruta discontinua.
 - Sin amarillo/ámbar (rechazado por el cliente). Acento plateado `#C9CED9` con texto azul marino en botones; etiquetas de sección en `#556080`.
+- Responsive: en pantallas ≤ 860px el menú del encabezado se colapsa en un botón hamburguesa (`site/assets/js/nav.js`) que despliega los enlaces y el selector de idioma sobre fondo celeste `#DCEBFA` con texto azul marino. En celular (≤ 640px) el pie de página va centrado (logo y razón social arriba, redes abajo). En ≤ 480px el código de país del WhatsApp va arriba del número y los botones del hero ocupan todo el ancho.
 
 ### Hero
 - Foto `site/assets/img/truck.jpg`: tres camiones Scania con la marca Transzoe al atardecer, sin texto encima. Se generó desde `truck.PNG` (2048×1152, 5,4 MB) como JPG de 1600×900 (~445 KB); se muestra completa en 16:9, sin recorte. Reemplaza a la foto de Instagram anterior (`trucks.jpg`).
@@ -56,8 +57,9 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 ### Formulario
 - Es un pedido de cotización. Título de la sección: "Contanos qué necesitás transportar y te preparamos una cotización." (completo, pedido del cliente).
-- Campos: Nombre, Empresa, WhatsApp, Origen, Destino (separados), Tipo de carga (texto libre), Peso aproximado y Volumen aproximado (dos columnas en una sola línea, también en celular: kg a la izquierda, enteros; m³ a la derecha, hasta 2 decimales; ambos opcionales), Fecha estimada (selector de fecha). Sin email: el cliente no lo pidió; se responde por WhatsApp.
+- Campos: Nombre, Empresa, WhatsApp, Origen, Destino (separados), Tipo de carga (texto libre), Peso aproximado y Volumen aproximado (dos columnas en una sola línea, también en celular: kg a la izquierda, enteros; m³ a la derecha, hasta 2 decimales; ambos opcionales; si una etiqueta ocupa dos líneas, las cajas quedan alineadas abajo), Fecha estimada (selector de fecha). Sin email: el cliente no lo pidió; se responde por WhatsApp.
 - WhatsApp: selector de código de país (texto, sin banderas) + número. Países: Paraguay, Argentina, Brasil, Chile, Bolivia, Uruguay y "Otro (incluir el código del país)", donde el visitante escribe el código. Por defecto Paraguay en ES y Brasil en PT. `contact.js` valida la cantidad de dígitos según `data-digits` de cada opción (ignora separadores y el 0 inicial) y envía el número completo, ej. `+595 981123456`.
+- Se mantiene Web3Forms para el envío por email. Se evaluaron alternativas sin configuración (`mailto:`, enviar el pedido por WhatsApp, FormSubmit) y se descartaron.
 - Los atributos `name` de los campos están en español en ambas páginas, para que todos los emails lleguen con las mismas etiquetas.
 - Sin autocompletado del navegador: `autocomplete="off"` en el formulario y en cada campo.
 

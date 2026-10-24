@@ -16,6 +16,7 @@ site/                     published folder
   assets/img/logo.jpg, truck.jpg
   assets/img/flags/       language switcher flags (py.svg, br.svg)
   assets/js/contact.js    sends the contact form in the background, shows the result inline
+  assets/js/nav.js        opens/closes the mobile (hamburger) menu
 wrangler.toml             Cloudflare Pages config (publishes site/)
 start.sh                  local preview server
 SPEC.md                   requirements, approved decisions, company data
