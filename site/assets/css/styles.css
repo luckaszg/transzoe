@@ -151,6 +151,16 @@ a:hover { color: var(--navy-dark); }
   .lang-switch a[aria-current="true"] { border-bottom-color: var(--navy-dark); }
 
   .lang-switch img { box-shadow: 0 0 0 1px rgba(7, 16, 82, 0.25); }
+
+  /* Hero buttons share the row in equal widths; phones stack them (≤ 480px) */
+  .actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /* Hero */
