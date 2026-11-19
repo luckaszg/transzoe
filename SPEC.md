@@ -29,7 +29,7 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 
 ### Stack
 - HTML + CSS estático, sin build. Deploy en Cloudflare Pages (`wrangler.toml` publica `site/`). Antes era Netlify; el cliente aprobó el cambio a Cloudflare.
-- Formulario de contacto con Web3Forms (`https://api.web3forms.com/submit`), que reenvía cada mensaje a transporte@logisticatranszoe.com.py. La access key de Web3Forms va en el campo oculto `access_key` de ambas páginas.
+- Formulario de contacto con Web3Forms (`https://api.web3forms.com/submit`), que reenvía cada mensaje a transporte@logisticatranszoe.com.py. La access key de Web3Forms (sacada del dashboard de Web3Forms) está en el campo oculto `access_key` de ambas páginas. Queda visible en el HTML, y así está pensado Web3Forms: solo sirve para enviar mensajes a ese inbox, no da acceso a la cuenta; el riesgo es spam (mitigado con `botcheck`). Se evaluó ocultarla con una Cloudflare Pages Function que la guarde en una variable de entorno; se descartó por ahora (un `.env` solo no sirve en un sitio estático sin build).
 - El formulario se envía en segundo plano (`site/assets/js/contact.js`) y un mensaje de confirmación reemplaza al formulario en la misma página (ES/PT). Si falla, se muestra un error y se puede reintentar. Anti-spam: campo oculto `botcheck`.
 
 ### Idiomas
@@ -40,7 +40,7 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 - Texto del logo en el encabezado: "Logística Transzoe S.R.L." (con puntos, igual que la razón social del pie).
 - Propuesta "A": azul marino `#0B1A7A` / `#071052`, tipografías Barlow + Barlow Condensed, títulos en mayúsculas, franja tipo ruta discontinua.
 - Sin amarillo/ámbar (rechazado por el cliente). Acento plateado `#C9CED9` con texto azul marino en botones; etiquetas de sección en `#556080`.
-- Responsive: en pantallas ≤ 860px el menú del encabezado se colapsa en un botón hamburguesa (`site/assets/js/nav.js`) que despliega los enlaces y el selector de idioma sobre fondo celeste `#DCEBFA` con texto azul marino. En celular (≤ 640px) el pie de página va centrado (logo y razón social arriba, redes abajo). En ≤ 480px el código de país del WhatsApp va arriba del número y los botones del hero ocupan todo el ancho.
+- Responsive: en pantallas ≤ 860px el menú del encabezado se colapsa en un botón hamburguesa (`site/assets/js/nav.js`) que despliega los enlaces y el selector de idioma sobre fondo celeste `#DCEBFA` con texto azul marino. En celular (≤ 640px) el pie de página va centrado (logo y razón social arriba, redes abajo). Entre 481px y 860px los dos botones del hero ("Solicitar cotización" y WhatsApp) van en una fila con el mismo ancho. En ≤ 480px el código de país del WhatsApp va arriba del número y los botones del hero se apilan ocupando todo el ancho.
 
 ### Hero
 - Foto `site/assets/img/truck.jpg`: tres camiones Scania con la marca Transzoe al atardecer, sin texto encima. Se generó desde `truck.PNG` (2048×1152, 5,4 MB) como JPG de 1600×900 (~445 KB); se muestra completa en 16:9, sin recorte. Reemplaza a la foto de Instagram anterior (`trucks.jpg`).
@@ -70,7 +70,3 @@ El estilo de la página debe de ser una elegante para una empresa de logística,
 - Email: transporte@logisticatranszoe.com.py
 - Dirección: 4ta Proyectada casi Parapiti, Limpio, Departamento Central, Paraguay.
 - Google Maps: https://maps.app.goo.gl/CZcwULDbbG7fk2L8A — ficha "Logística i TransZoe", coordenadas `-25.1617711, -57.4717932` (el mapa embebido usa estas coordenadas).
-
-## Pendiente
-
-- Access key de Web3Forms (reemplazar `[WEB3FORMS_ACCESS_KEY]` en ambas páginas).
